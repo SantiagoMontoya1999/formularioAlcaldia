@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('../includes/head') %>
+  <link rel="stylesheet" href="public/css/home.css" />
+</head>
+
+<body>
+  <%- include('../includes/header') %>
+
+  <main class="content-wrapper mt-5" style="margin-top: 80px !important">
+    <div class="container" style="width: 95% !important">
+      <div class="row justify-content-md-center mb-5">
+        <div class="col-md-12 mt-5">
+          <h2 class="text-center">
+            Llena este formulario para brindarte la mejor de la atención
+            <hr />
+          </h2>
+        </div>
+
+        <div class="col-md-6 mt-5 text-center cardForm">
+          <form action="/procesar-formulario" method="POST">
+            <div class="form-group mb-3">
+              <label for="nombre_alumno">Nombre Completo</label>
+              <input type="text" name="nombre_alumno" class="form-control" />
+            </div>
+            <div class="form-group mb-3">
+              <label for="email_alumno">Correo electrónico</label>
+              <input type="text" name="email_alumno" class="form-control" />
+            </div>
+            <div class="form-group mb-4">
+              <label for="curso_alumno">Barrio</label>
+              <select name="curso_alumno" class="form-control">
+                <option value="Alfonso Lopez">Alfonso López</option>
+                <option value="Balsillas">Balsillas</option>
+                <option value="Bavaria">Bavaria</option>
+                <option value="Bayrón Gaviria">Bayrón Gaviria</option>
+                <option value="Buenos Aires">Buenos Aires</option>
+                <option value="El Aguacate">El Aguacate</option>
+                <option value="El Centro">El Centro</option>
+                <option value="El Ciprés">El Ciprés</option>
+                <option value="El Edén">El Edén</option>
+                <option value="El Prado">El Prado</option>
+                <option value="El Progreso">El Progreso</option>
+                <option value="Fernando Tangarife I">Fernando Tangarife I</option>
+                <option value="Fernando Tangarife II">Fernando Tangarife II</option>
+                <option value="La Magdalena">La Magdalena</option>
+                <option value="La Palma">La Palma</option>
+                <option value="La Playa">La Playa</option>
+                <option value="Las Américas">Las Américas</option>
+                <option value="Los Almendros">Los Almendros</option>
+                <option value="Los Gavilanes">Los Gavilanes</option>
+                <option value="Los Libertadores">Los Libertadores</option>
+                <option value="Luis Carlos Galán">Luis Carlos Galán</option>
+                <option value="Obrero">Obrero</option>
+                <option value="Pedro Pablo Bello">Pedro Pablo Bello</option>
+                <option value="Pío Doce">Pío Doce</option>
+                <option value="Porto Bello">Porto Bello</option>
+                <option value="Restrepo">Restrepo</option>
+                <option value="San Antonio">San Antonio</option>
+                <option value="San Carlos">San Carlos</option>
+                <option value="San Cayetano">San Cayetano</option>
+                <option value="San Fernando">San Fernando</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Sigifredo Zuleta">Sigifredo Zuleta</option>
+                <option value="Siete de Enero">Siete de Enero</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="num_calificacion">Calificación</label>
+              <select name="num_calificacion" class="form-control" required>
+                <option value="1">1 - muy mala atencion</option>
+                <option value="2">2 - mala atencion</option>
+                <option value="3">3 - es aceptable la atencion</option>
+                <option value="4">4 - buena atencion</option>
+                <option value="5">5 - excelente atencion</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="num_cedula">Cédula</label>
+              <input type="text" name="num_cedula" class="form-control" maxlength="10" pattern="\d{1,10}" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="numero_telefono">Número de Teléfono</label>
+              <input type="text" name="numero_telefono" class="form-control" maxlength="15" pattern="\d{1,15}" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="descripcion_at">Danos tu opinión</label>
+              <textarea name="descripcion_at" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <!-- Nuevas casillas -->
+            <div class="form-group mb-4">
+              <label for="edad_pr">Rango de Edad</label>
+              <select name="edad_pr" class="form-control" required>
+                <option value="0-5 años">0-5 años</option>
+                <option value="6-12 años">6-12 años</option>
+                <option value="13-17 años">13-17 años</option>
+                <option value="18-26 años">18-26 años</option>
+                <option value="27-59 años">27-59 años</option>
+                <option value="60-100 años">60-100 años</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="genero_pr">Género</label>
+              <select name="genero_pr" class="form-control" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="poblacion_pr">Población</label>
+              <select name="poblacion_pr" class="form-control" required>
+                <option value="Discapacitado">Discapacitado</option>
+                <option value="Victimas">Víctimas</option>
+                <option value="Indigena">Indígena</option>
+                <option value="Afrocolombiano">Afrocolombiano</option>
+                <option value="Raizal">Raizal</option>
+                <option value="Rom">Rom</option>
+                <option value="Mujer de cabeza de familia">Mujer de cabeza de familia</option>
+                <option value="LGTBI">LGTBI</option>
+                <option value="Reinsertados">Reinsertados</option>
+                <option value="Migrantes">Migrantes</option>
+                <option value="Otra">Otra</option>
+                <option value="Ninguna">Ninguna</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="zona_pr">Zona</label>
+              <select name="zona_pr" class="form-control" required>
+                <option value="Urbana">Urbana</option>
+                <option value="Rural">Rural</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-info btn-lg btn-block">
+              Enviar formulario
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../includes/scripts') %>
+</body>
+
+</html>
