@@ -71,11 +71,11 @@
             <div class="form-group mb-4">
               <label for="num_calificacion">Calificación</label>
               <select name="num_calificacion" class="form-control" required>
-                <option value="1">1 - muy mala atencion</option>
-                <option value="2">2 - mala atencion</option>
-                <option value="3">3 - es aceptable la atencion</option>
-                <option value="4">4 - buena atencion</option>
-                <option value="5">5 - excelente atencion</option>
+                <option value="1">1 - muy mala atención</option>
+                <option value="2">2 - mala atención</option>
+                <option value="3">3 - es aceptable la atención</option>
+                <option value="4">4 - buena atención</option>
+                <option value="5">5 - excelente atención</option>
               </select>
             </div>
 
@@ -90,7 +90,8 @@
             </div>
 
             <div class="form-group mb-3">
-              <label for="descripcion_at">Danos tu opinión</label>
+              <label for="descripcion_at">Detalle el motivo de su solicitud 
+              </label>
               <textarea name="descripcion_at" class="form-control" rows="3" required></textarea>
             </div>
 
@@ -141,7 +142,16 @@
               </select>
             </div>
 
-            
+            <div class="form-group mb-4">
+              <label for="tipo">Tipo</label>
+              <select name="tipo" class="form-control" required>
+                <option value="Reconocimiento">Reconocimiento</option>
+                <option value="Petición">Petición</option>
+                <option value="Queja">Queja</option>
+                <option value="Reclamo">Reclamo</option>
+                <option value="Sugerencia">Sugerencia</option>
+              </select>
+            </div>
 
             <button type="submit" class="btn btn-info btn-lg btn-block">
               Enviar formulario

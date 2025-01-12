@@ -58,14 +58,15 @@ app.post("/procesar-formulario", async (req, res) => {
     edad_pr,
     genero_pr,
     poblacion_pr,
-    zona_pr
+    zona_pr,
+    tipo
   } = req.body;
 
   try {
     const query = `
       INSERT INTO estudiantes 
-      (nombre_alumno, email_alumno, curso_alumno, num_calificacion, num_cedula, numero_telefono, descripcion_at, edad_pr, genero_pr, poblacion_pr, zona_pr, created_at) 
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+      (nombre_alumno, email_alumno, curso_alumno, num_calificacion, num_cedula, numero_telefono, descripcion_at, edad_pr, genero_pr, poblacion_pr, zona_pr, tipo, created_at) 
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     await connection.execute(query, [
       nombre_alumno,
@@ -79,6 +80,7 @@ app.post("/procesar-formulario", async (req, res) => {
       genero_pr,
       poblacion_pr,
       zona_pr,
+      tipo,
       new Date(),
     ]);
 
@@ -106,14 +108,15 @@ app.post("/procesar-formulario2", (req, res) => {
     edad_pr,
     genero_pr,
     poblacion_pr,
-    zona_pr
+    zona_pr,
+    tipo
   } = req.body;
 
   try {
     const query = `
       INSERT INTO estudiantes 
-      (nombre_alumno, email_alumno, curso_alumno, num_calificacion, num_cedula, numero_telefono, descripcion_at, edad_pr, genero_pr, poblacion_pr, zona_pr, created_at) 
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+      (nombre_alumno, email_alumno, curso_alumno, num_calificacion, num_cedula, numero_telefono, descripcion_at, edad_pr, genero_pr, poblacion_pr, zona_pr, tipo, created_at) 
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     connection.query(
       query,
@@ -129,6 +132,7 @@ app.post("/procesar-formulario2", (req, res) => {
         genero_pr,
         poblacion_pr,
         zona_pr,
+        tipo,
         new Date(),
       ],
       (error, result) => {
